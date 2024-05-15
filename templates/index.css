@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav {
+  position: fixed;
+  background: #1b1b1b;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 12;
+}
+
+nav .menu {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.menu .logo a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  margin-left: 800px; 
+}
+
+.menu ul li {
+  margin-left: 7px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 50px;
+  transition: all 0.5s ease;
+}
+
+.menu ul li a:hover {
+  background: #fff;
+  color: black;
+}
+
+.img {
+  background: url("images/main.avif") no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  /* ISSE USE KRKE TEXT IMAGE WALE CONTAINER KE ANDR AAYEGA  */
+  transform: translate(-50%, -50%);
+  /* VERTICALLY OR HORIZONTAL KITNA JAYEGA */
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.center .sub_title {
+  color: #fff;
+  font-size: 52px;
+  font-weight: 600;
+}
+
+.center .btns {
+  margin-top: 20px;
+}
+
+.center .btns button {
+  height: 55px;
+  width: 170px;
+  border-radius: 5px;
+  border: none;
+  margin: 0 10px;
+  border: 2px solid white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.center .btns button:first-child {
+  color: #fff;
+  font-weight: 600;
+  background: none;
+}
+
+.btns button:first-child:hover {
+  background: rgb(26, 112, 45);
+  color: black;
+}
+
+.center .btns button:last-child {
+  background: white;
+}
+
+.container {
+  background-color: rgb(93, 146, 168);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 100%;
+  text-align: center;
+  margin: 20px;
+}
+
+
+h1 {
+  font-size: 24px;
+  color: #111111;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.counter {
+  font-size: 18px;
+  color: #050505;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.count-label {
+  font-weight: bold;
+  color: #050505;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #302f49;
+  padding: 20px;
+}
+
+.footer .copy {
+  color: #fff;
+}
+
+.bottom-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.bottom-links .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.bottom-links .links span {
+  font-size: 20px;
+  color: #fff;
+  margin: 10px 0;
+}
+
+.bottom-links .links a {
+  text-decoration: none;
+  color: #a1a1a1;
+  padding: 10px 20px;
+}
+
+
+@media (max-width: 768px) {
+  .menu .logo a {
+    font-size: 28px;
+  }
+
+  .menu ul {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .menu ul li {
+    margin-left: 0; 
+    margin-top: 7px; 
+  }
+
+  .menu ul li a {
+    padding: 8px 0; 
+  }
+
+  .center .title {
+    font-size: 36px; 
+  }
+
+  .center .sub_title {
+    font-size: 32px; 
+  }
+
+  .center .btns {
+    margin-top: 10px;
+  }
+
+  .center .btns button {
+    height: 50px;
+    width: 150px; 
+    font-size: 18px; 
+  }
+
+  .container {
+    padding: 10px; 
+  }
+
+  h1 {
+    font-size: 20px; 
+  }
+
+  textarea {
+    height: 150px; 
+    font-size: 16px; 
+  }
+
+  .counter {
+    font-size: 16px; 
+  }
+
+  .count-label {
+    font-weight: normal; 
+  }
+
+  .footer .copy {
+    font-size: 16px; 
+  }
+
+  .bottom-links {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .bottom-links .links {
+    flex-direction: row; 
+    margin: 10px 0; 
+  }
+
+  .bottom-links .links span {
+    margin: 0; 
+  }
+}
+
+input[type="file"] {
+  height: 30px; 
+  width: 250px; 
+  background-color: #007BFF; 
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+

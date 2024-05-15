@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> WORD COUNTER</title> 
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="icon" type="image/png" href="images/new w.jpg">
+</head>
+<body>
+    <nav>
+        <div class="menu">
+            <div class="logo">
+                <a href="index.html">WordCount</a>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="img"></div>
+    <div class="center">
+        <div class="sub_title">Effortless Word Counting for Writers and Professionals</div>
+        <div class="btns">
+            <button><a style="color: rgb(242, 246, 247);text-decoration: none; " href="https://en.wikipedia.org/wiki/Word_count" target="_blank">Learn More</a></button>
+            <button><a style="text-decoration: none; color: black; " href="#12">Count Now</a></button>
+        </div>
+    </div> 
+
+    <div id="12" style="background-color: whitesmoke;" > <br><br><br>
+        <div class="container">
+            <h1>Word, Character, and Digit Counter</h1>
+            <textarea id="text-input" placeholder="Type or paste your text here..." oninput="countWordsAndCharacters()"></textarea>
+            <input type="file" id="fileInput" accept=".txt" onchange="handleFileSelect()">
+            <p class="counter"><span class="count-label">Word count:</span> <span id="word-count">0</span> </p>
+            <p class="counter"><span class="count-label">Character count (including spaces):</span> <span id="char-count">0</span> </p>
+            <p class="counter"><span class="count-label">Digit count:</span> <span id="digit-count">0</span></p> <br><hr><br>
+            <br><br><br><br><br>
+        </div> <br><br><br>
+    </div>
+    <div>
+        <footer class="footer">
+            <div class="copy">&copy; 2023 Word Count PG-13</div>
+            <div class="bottom-links">
+                <div class="links">
+                    <span>MORE INFO</span>
+                    <a href="privacy.html">Privacy and Policy</a>
+                    <a href="#">Report a Bug</a>
+                    <a href="#">More Tools</a>
+                </div>
+                <div class="links"> <br> <br><br>
+                    <span>SOCIAL LINKS</span>
+                    <a href="https://www.facebook.com/login/"><img src="images/facebook logo.png" alt=""></a>
+                    <a href="https://twitter.com/login? lang=en"><img src="images/twitter1 logo.png" alt=""></a>
+                    <a href="https://www.instagram.com/accounts/login/?hl=en"><img src="images/instagram logo.png" alt=""></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        function countWordsAndCharacters() {
+            const text = document.getElementById('text-input').value;
+
+            // Count words
+            const words = text.match(/\b\w+\b/g) || [];
+            document.getElementById('word-count').textContent = words.length;
+
+            // Count characters (including spaces)
+            document.getElementById('char-count').textContent = text.length;
+
+            // Count digits
+            const digits = text.match(/\d/g) || [];
+            document.getElementById('digit-count').textContent = digits.length;
+        }
+
+        function handleFileSelect() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    const content = e.target.result;
+                    // Update the textarea with the file content
+                    document.getElementById('text-input').value = content;
+                    // Recalculate counts
+                    countWordsAndCharacters();
+                };
+
+                reader.readAsText(file);
+            }
+        }
+    </script>
+</body>
+</html>
